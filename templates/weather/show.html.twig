@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Weather!{% endblock %}
+
+{% block body %}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h1>Current weather</h1>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Country Code</th>
+                        <th>Temp C</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{ weather.city }}</td>
+                        <td>{{ weather.country|upper }}</td>
+                        <td>{{ weather.temperature }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

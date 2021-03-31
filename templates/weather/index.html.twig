@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Weather!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <h1>Check forecast</h1>
+            {{ form_start(weatherForm) }}
+                {{ form_row(weatherForm.city, {
+                    attr: { placeholder: 'City'}
+                }) }}
+                {{ form_row(weatherForm.country, {
+                    attr: { placeholder: 'Country Code'}
+                }) }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+            {{ form_end(weatherForm) }}
+        </div>
+    </div>
+</div>
+{% endblock %}
